@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{32C3BDE6-E125-3128-82C1-25D0441455A3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TwoLearning.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="13" Column="9" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="29" Column="1" />
       <File FileName="Assets/Scripts/LearnngHowToProgram.cs" Line="14" Column="1" />
-      <File FileName="Assets/Scripts/NewClass.cs" Line="54" Column="29" />
-      <File FileName="Assets/Scripts/NewClass1.cs" Line="48" Column="1" />
-      <File FileName="Assets/Scripts/NewClass.cs" Line="17" Column="48" />
+      <File FileName="Assets/Scripts/Player.cs" Line="9" Column="34" />
+      <File FileName="Assets/Scripts/Warrior.cs" Line="12" Column="21" />
+      <File FileName="Assets/Scripts/Player.csx" Line="120" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +13,7 @@
           <Node name="My project" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="TwoLearning.cs" selected="True" />
+                <Node name="Player.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -25,7 +25,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4f9c8a6a-797e-4610-8df9-66f5d03f111a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/anilkumarpotlapally/My-Unity-First-Game/My project/Assets/Scripts/Player.cs" relfile="Assets/Scripts/Player.cs" line="23" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

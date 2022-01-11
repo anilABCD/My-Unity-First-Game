@@ -1,69 +1,122 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
 
-   private int _health;
-   private int _power;
-   private string _name;
+    [SerializeField]
+    private float moveForce = 1f;
 
-   public int Health
+    [SerializeField]
+    private float jumpForce = 11f;
+
+    float movementX;
+
+    private float myMovementX;
+    private float myMovementY;
+
+    private Rigidbody2D myBody;
+
+    private Animator anim;
+
+    private SpriteRenderer sr;
+
+    private bool isGrounded = true;
+
+    private string WALK_ANIMATION = "Walk";
+    private string GROUND_TAG = "Ground";
+
+    private void Awake()
     {
-        get
-        {
-            return _health;
-        }
+        myBody = GetComponent<Rigidbody2D>();
 
-        set
-        {
-            _health = value;
-        }
+        anim = GetComponent<Animator>();
+
+        sr = GetComponent<SpriteRenderer>();
+
+        anim.SetBool(WALK_ANIMATION, false);
+
     }
 
-    public int Power
+    // Start is called before the first frame update
+    void Start()
     {
-        get
-        {
-            return _power;
-        }
-
-        set
-        {
-            _power = value;
-        }
+        
     }
 
-    public string Name
+    // Update is called once per frame
+    void Update()
     {
-        get
+        PlayerMoveKeyboard();
+        AnimatePlayer();
+       
+    }
+
+    private void FixedUpdate()
+    {
+        PlayerJump();
+    }
+
+    void PlayerMoveKeyboard()
+    {
+        //  myMovementX = Input.GetAxis("Horizontal"); // -1 to 1 slowly from -1 -0.333 -0.22 to  0 to 0.333 0.5 1 
+
+        myMovementX = Input.GetAxisRaw("Horizontal");
+    
+       if( myMovementX > 0)
         {
-            return _name;
+            sr.flipX = false;
         }
-
-        set
+        else
+        if( myMovementX <0)
         {
-            _name = value;
+            sr.flipX = true;
         }
+        
+        transform.position += new Vector3(myMovementX, 0f, 0f) * Time.deltaTime * moveForce;
+
+       
+
     }
 
-    public Player(int health, int power, string name)
+    void AnimatePlayer()
     {
-        this._health = health;
-        this._power = power;
-        this._name = name;
-    }
-
-    public virtual void Attack()
-    {
-        print("Player is attacking with the fire");
-    }
+      
+       anim.SetBool(WALK_ANIMATION,myMovementX != 0 ? true: false);
      
-    public void Info()
+    }
+
+    void PlayerJump()
     {
-        Debug.Log("Health is: " + Health);
-        Debug.Log("Power is: " + Power);
-        Debug.Log("Name is: " + Name);
+
+
+        //if (Input.GetButton("Jump")) // down 
+        //{
+        //    Debug.Log("Jumpb Pressed Continues");
+        //}
+
+        if (Input.GetButtonDown("Jump") && isGrounded ) // down 
+        {
+            isGrounded = false;
+
+            myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+
+        }
+
+
+        //if (Input.GetButtonUp("Jump")) // pressed 
+        //{
+        //    Debug.Log("Jump Button Up");
+        //}
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(GROUND_TAG))
+        {
+            isGrounded = true;
+            print("Ground Touched");
+        }
     }
 }
