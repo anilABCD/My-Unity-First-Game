@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{32C3BDE6-E125-3128-82C1-25D0441455A3}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TwoLearning.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="13" Column="9" />
+      <File FileName="Assets/Scripts/LearnngHowToProgram.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/NewClass.cs" Line="54" Column="29" />
+      <File FileName="Assets/Scripts/NewClass1.cs" Line="48" Column="1" />
+      <File FileName="Assets/Scripts/NewClass.cs" Line="17" Column="48" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="My project" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="TwoLearning.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4f9c8a6a-797e-4610-8df9-66f5d03f111a" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
